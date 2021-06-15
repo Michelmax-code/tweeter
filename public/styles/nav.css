@@ -2,11 +2,12 @@
 .navbar {
   display: flex;
   height: 120px;
-  background-color: #4056a1;
+  background-color: #3455d8;
   color: #FFFFFF;
   width: 100%;
   padding: 1.5em;
   justify-content: space-between;
+  position: fixed;
 
 }
 .navSpan {
@@ -14,7 +15,13 @@
 }
 .navbarsub {
   display: flex;
-  background-color: #4056a1;
-  color: #FFFFFFFF;
-  justify-content: flex-end; flex-direction: column;
+  justify-content: flex-end; 
+  flex-direction: column;
+}
+
+.fa-angle-double-down {
+  display: flex;
+  color: red;
+  align-self: center;
+  padding-bottom: 18px;
 }
