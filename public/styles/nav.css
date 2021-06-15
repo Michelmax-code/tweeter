@@ -1,0 +1,20 @@
+/* apply style to the navigation bar */
+.navbar {
+  display: flex;
+  height: 120px;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 1.5em;
+  justify-content: space-between;
+
+}
+.navSpan {
+  font-family: 'Bungee';
+}
+.navbarsub {
+  display: flex;
+  background-color: #4056a1;
+  color: #FFFFFFFF;
+  justify-content: flex-end; flex-direction: column;
+}
