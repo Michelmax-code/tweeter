@@ -1,0 +1,15 @@
+header {
+
+  height: 500px;
+  background-color: #9aa6cf;
+  color: #080808;
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  top: 114px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/brick3.png");
+  text-align: center;
+}
