@@ -21,9 +21,25 @@ body {
   font-family: 'Source Sans Pro';
 }
 
+
 .fontTweeter {
   font-family: 'Bungee';
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   display: flex;
+   width: 100%;
+   margin: 1em 1em 2em 2em;
+   background-color: #f4f1ec;
+ }
+ 
+ .container {
+   display: flex;
+   width: 90%;
+   justify-content: center;
+ }
+ 
