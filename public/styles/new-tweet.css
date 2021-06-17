@@ -30,3 +30,9 @@ form textarea {
   line-height: 0.7;
   font-weight: bold;
 }
+.tweet-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;  
+}
