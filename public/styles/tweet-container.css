@@ -1,0 +1,55 @@
+.tweet-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tweet {
+  width: 100%;
+  padding: 15px;
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  background: none;
+  resize: none;
+  line-height: 0.7;
+  font-weight: bold;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.username {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 20px;
+}
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid;
+}
+
+.tweet-actions {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+}
+
+.text-in {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+i:hover {
+  color: red;
+}
+
+.tweet:hover {
+  box-shadow: 0 0 20px chocolate;
+}
