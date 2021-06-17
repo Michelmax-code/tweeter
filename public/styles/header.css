@@ -9,4 +9,5 @@ header {
   justify-content: center;
   background-image: url("/images/brick3.png");
   text-align: center;
+  font-size: 22px; 
 }
