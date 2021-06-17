@@ -5,10 +5,10 @@
   background-color: #3455d8;
   color: #FFFFFF;
   width: 100%;
-  padding: 1.5em;
+  padding: 1em;
   justify-content: space-between;
-  position: sticky;
-
+  position: fixed;
+  top: 0;
 }
 .navSpan {
   font-family: 'Bungee';
