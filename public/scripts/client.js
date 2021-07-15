@@ -3,33 +3,37 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+$(document).ready(function() {
 const data = [
   {
     "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "name": "MarioBros",
+      "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Mario-icon.png",
+      "handle": "@MarioB"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "I am not a king but I have my princess!!!..."
     },
     "created_at": 1626059964470
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "name": "LuigiBros",
+      "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Luigi-icon.png",
+      "handle": "@LuigiB"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "I am a sancho for my Quijote Mario :)..."
     },
     "created_at": 1626146364470
   }
 ];
 
-
-
+const renderTweets = (tweets) => {
+  for (let theTweet of tweets) {
+    $('.tweet-container').append(createTweetElement(theTweet));
+  }
+};
 
 const createTweetElement = (tweet) => {
   const $tweet = $(".tweet-container");
@@ -79,3 +83,5 @@ const createTweetElement = (tweet) => {
   </article>`;
   return html;
 };
+
+renderTweets(data);
