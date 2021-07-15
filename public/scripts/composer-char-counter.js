@@ -1,7 +1,10 @@
-$(document).ready(function () {
+
+$(document).ready(function() {
+  $("#footer-date").text(timeago.format('2016-06-12', 'en_US'));
+  //console.log(timeago.format('2016-06-12', 'en_US'));
   let maxLength = 140;
-  console.log(maxLength);
-  $("textarea").keyup(function () {
+  //console.log(maxLength);
+  $("textarea").keyup(function() {
     let length = $(this).val().length;
     length = maxLength - length;
     if (($(this).val().length) > 140) {
@@ -12,3 +15,5 @@ $(document).ready(function () {
     $(".counter").text(length);
   });
 });
+
+const timeago = window.timeago;
