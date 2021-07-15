@@ -16,30 +16,40 @@ $(document).ready(function() {
     })
   });
 
-  const data = [
-    {
-      "user": {
-        "name": "MarioBros",
-        "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Mario-icon.png",
-        "handle": "@MarioB"
-      },
-      "content": {
-        "text": "I am not a king but I have my princess!!!..."
-      },
-      "created_at": 1626059964470
-    },
-    {
-      "user": {
-        "name": "LuigiBros",
-        "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Luigi-icon.png",
-        "handle": "@LuigiB"
-      },
-      "content": {
-        "text": "I am a sancho for my Quijote Mario :)..."
-      },
-      "created_at": 1626146364470
-    }
-  ];
+  const loadtweets = function() {
+    $.ajax('/tweets', { method: 'GET', dataType: "json" })
+      .then(function (data) {
+        console.log('Success: ',data);
+        renderTweets(data);
+    });
+  };
+
+  loadtweets();
+  
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "MarioBros",
+  //       "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Mario-icon.png",
+  //       "handle": "@MarioB"
+  //     },
+  //     "content": {
+  //       "text": "I am not a king but I have my princess!!!..."
+  //     },
+  //     "created_at": 1626059964470
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "LuigiBros",
+  //       "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Luigi-icon.png",
+  //       "handle": "@LuigiB"
+  //     },
+  //     "content": {
+  //       "text": "I am a sancho for my Quijote Mario :)..."
+  //     },
+  //     "created_at": 1626146364470
+  //   }
+  // ];
 
   const renderTweets = (tweets) => {
     for (let theTweet of tweets) {
@@ -74,5 +84,5 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
+  //renderTweets(data);
 });
