@@ -4,6 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
+
+  $(".new-tweet form").submit(function(event) {
+    event.preventDefault();
+    alert("Submitted");
+    $.post("/tweets", $(".new-tweet form").serialize())
+      .then(() => {
+      });
+      .catch((err) => {
+        console.log(`Error loading articles: ${err}`)
+    })
+  });
+
   const data = [
     {
       "user": {
