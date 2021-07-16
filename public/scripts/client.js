@@ -17,6 +17,7 @@ $(document).ready(function() {
     alert("Submitted");
     $.post("/tweets", $(".new-tweet form").serialize())
       .then(() => {
+        loadtweets();
       });
       .catch((err) => {
         console.log(`Error loading articles: ${err}`)
@@ -31,8 +32,6 @@ $(document).ready(function() {
         renderTweets(data);
     });
   };
-
-  loadtweets();
   
   // const data = [
   //   {
