@@ -28,38 +28,24 @@ $(document).ready(function() {
   const loadtweets = function() {
     $.ajax('/tweets', { method: 'GET', dataType: "json" })
       .then(function (data) {
-        console.log('Success: ',data);
+        //console.log('Success: ',data);
         renderTweets(data);
     });
   };
+
+  loadtweets();
   
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "MarioBros",
-  //       "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Mario-icon.png",
-  //       "handle": "@MarioB"
-  //     },
-  //     "content": {
-  //       "text": "I am not a king but I have my princess!!!..."
-  //     },
-  //     "created_at": 1626059964470
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "LuigiBros",
-  //       "avatars": "https://icons.iconarchive.com/icons/ph03nyx/super-mario/48/Hat-Luigi-icon.png",
-  //       "handle": "@LuigiB"
-  //     },
-  //     "content": {
-  //       "text": "I am a sancho for my Quijote Mario :)..."
-  //     },
-  //     "created_at": 1626146364470
-  //   }
-  // ];
+  const escape = (str) => { // Cross-Site Scripting 
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    //console.log("TEST Div", div);
+    //console.log("TEST INNER", div.innerHTML);
+    return div.innerHTML;
+  }
 
   const renderTweets = (tweets) => {
-    for (let theTweet of tweets) {
+    $(".tweet-container").empty()
+    for (let theTweet of tweets) { // calls createTweetElement for each tweet
       $('.tweet-container').append(createTweetElement(theTweet));
     }
   };
@@ -73,7 +59,7 @@ $(document).ready(function() {
         <span>"${tweet.user.handle}"</span>
       </div>
       <div>
-        <p>"${tweet.content.text}"</p>
+        <p>"${escape(tweet.content.text)}"</p>
       </div>
       <footer class="tweet-footer">
         <div>
