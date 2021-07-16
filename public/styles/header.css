@@ -1,6 +1,6 @@
 header {
-
-  height: 420px;
+  padding: 10px;
+  height: 160px;
   background-color: #9aa6cf;
   color: #080808;
   width: 100%;
@@ -10,5 +10,9 @@ header {
   background-image: url("/images/brick3.png");
   text-align: center;
   font-size: 22px;
+}
 
+#profile-header {
+  margin-top: 130px;
+  height: 350px;
 }
