@@ -29,10 +29,10 @@ module.exports = {
    
     const avatars = {
     
-      Female: ["https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Mushroom-1UP-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Flower-Ice-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Lakitu-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Star-icon.png", "https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Yoshi-icon.png"],
-      Male: ["https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Paper-Bowser-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Mushroom-Mini-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Super-Baby-Mario-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Yoshi-Star-icon.png", "https://icons.iconarchive.com/icons/ph03nyx/super-mario/64/Boo-icon.png"]
+      Female: ["https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Mushroom-1UP-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Flower-Ice-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Lakitu-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Star-icon.png", "https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Yoshi-icon.png"],
+      Male: ["https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Paper-Bowser-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Mushroom-Mini-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Super-Baby-Mario-icon.png","https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Yoshi-Star-icon.png", "https://icons.iconarchive.com/icons/ph03nyx/super-mario/32/Boo-icon.png"]
     
-    }
+    };
     
     const avatarArray = avatars[gender]
     const userAvatar = avatarArray[Math.floor(Math.random()*avatarArray.length)]
