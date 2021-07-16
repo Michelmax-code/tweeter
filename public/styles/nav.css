@@ -1,7 +1,7 @@
 /* apply style to the navigation bar */
 .navbar {
   display: flex;
-  height: 120px;
+  height: 100px;
   background-color: #3455d8;
   color: #FFFFFF;
   width: 100%;
@@ -23,5 +23,5 @@
   display: flex;
   color: red;
   align-self: center;
-  padding-bottom: 18px;
+  padding-bottom: 10px;
 }

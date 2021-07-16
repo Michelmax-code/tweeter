@@ -5,10 +5,9 @@
 .errorMessage {
   display: none;
   text-align: center;
-  font-family: 'Bungee';
-  border: 1px solid rgb(235, 8, 8);
+  font-family: 'Arial';
   color: rgb(235, 8, 8);
-  font-size: 20px;
+  font-size: 16px;
 }
 
 form {
