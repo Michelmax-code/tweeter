@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -7,44 +8,52 @@ $(document).ready(function() {
 
   $(".new-tweet form").submit(function(event) {
     event.preventDefault();
+    $(".errorMessage").slideUp("slow");
     if ($("#tweet-text").val().length < 1) {
-      alert("Please type something, the tweet is empty! :(");
-      console.log("Tweet empty!");
-    } else if ($("#tweet-text").val().length > 140) {
-      alert("To many characters (140 max), sorry :(");
-      console.log("too many characters");
-    } else  {
-    alert("Submitted");
+      //console.log("Tweet empty!");
+      $(".errorMessage").text("Please type something, the tweet is empty! :(");
+      $(".errorMessage").slideDown("slow");
+      return;
+     
+    }
+
+    if ($("#tweet-text").val().length > 140) {
+      //console.log("too many characters");
+      $(".errorMessage").text("To many characters (140 max), sorry :(");
+      $(".errorMessage").slideDown("slow");
+      return;
+    }
+
+    //alert("Submitted");
     $.post("/tweets", $(".new-tweet form").serialize())
       .then(() => {
         loadtweets();
-      });
-      .catch((err) => {
-        console.log(`Error loading articles: ${err}`)
       })
-    }
+      .catch((err) => {
+        console.log(`Error loading articles: ${err}`);
+      });
   });
 
   const loadtweets = function() {
     $.ajax('/tweets', { method: 'GET', dataType: "json" })
-      .then(function (data) {
+      .then(function(data) {
         //console.log('Success: ',data);
         renderTweets(data);
-    });
+      });
   };
 
   loadtweets();
   
-  const escape = (str) => { // Cross-Site Scripting 
+  const escape = (str) => { // Cross-Site Scripting
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     //console.log("TEST Div", div);
     //console.log("TEST INNER", div.innerHTML);
     return div.innerHTML;
-  }
+  };
 
   const renderTweets = (tweets) => {
-    $(".tweet-container").empty()
+    $(".tweet-container").empty();
     for (let theTweet of tweets) { // calls createTweetElement for each tweet
       $('.tweet-container').append(createTweetElement(theTweet));
     }
