@@ -9,6 +9,7 @@ $(document).ready(function() {
   $(".new-tweet form").submit(function(event) {
     event.preventDefault();
     $(".errorMessage").slideUp("slow");
+    // Validate the minimum content in the tweet
     if ($("#tweet-text").val().length < 1) {
       //console.log("Tweet empty!");
       $(".errorMessage").text("Please type something, the tweet is empty! :(");
@@ -16,7 +17,7 @@ $(document).ready(function() {
       return;
      
     }
-
+    //Validation about the maximum size of the tweet
     if ($("#tweet-text").val().length > 140) {
       //console.log("too many characters");
       $(".errorMessage").text("To many characters (140 max), sorry :(");
@@ -33,7 +34,8 @@ $(document).ready(function() {
         console.log(`Error loading articles: ${err}`);
       });
   });
-
+  
+  // load the tweets in the data
   const loadtweets = function() {
     $.ajax('/tweets', { method: 'GET', dataType: "json" })
       .then(function(data) {
@@ -41,9 +43,9 @@ $(document).ready(function() {
         renderTweets(data);
       });
   };
-
   loadtweets();
   
+  // Protect (xss) when a new tweet is created
   const escape = (str) => { // Cross-Site Scripting
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -51,14 +53,16 @@ $(document).ready(function() {
     //console.log("TEST INNER", div.innerHTML);
     return div.innerHTML;
   };
-
+  
+  // Render the tweets
   const renderTweets = (tweets) => {
     $(".tweet-container").empty();
     for (let theTweet of tweets) { // calls createTweetElement for each tweet
-      $('.tweet-container').append(createTweetElement(theTweet));
+      $('.tweet-container').prepend(createTweetElement(theTweet)); // sort the tweet from the recent
     }
   };
-
+  
+  // Function to create the tweet
   const createTweetElement = (tweet) => {
     let $tweet = `
   <article class="tweet">
@@ -86,5 +90,4 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  //renderTweets(data);
 });
