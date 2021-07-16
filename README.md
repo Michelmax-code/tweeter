@@ -10,9 +10,9 @@ Enjoy sharing something special about you!!
 
 Here are some screenshots about how looks now this tweeter...
 
-!["Screenshot: Main area of the tweet page"]()
-!["Screenshot: Container to create tweets and old tweets by users"]()
-!["Screenshot: Tweeter page"]()
+!["Screenshot: Main area of the tweet page"](https://github.com/Michelmax-code/tweeter/blob/master/public/DOCS/Mainarea.png?raw=true)
+!["Screenshot: Container to create tweets and old tweets by users"](https://github.com/Michelmax-code/tweeter/blob/master/public/DOCS/Tweetsarea.png?raw=true)
+!["Screenshot: Tweeter page"](https://github.com/Michelmax-code/tweeter/blob/master/public/DOCS/Tweetspage.png?raw=true)
 
 ## Getting Started
 
