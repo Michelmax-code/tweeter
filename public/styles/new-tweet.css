@@ -2,6 +2,15 @@
   width: 100%;
 }
 
+.errorMessage {
+  display: none;
+  text-align: center;
+  font-family: 'Bungee';
+  border: 1px solid rgb(235, 8, 8);
+  color: rgb(235, 8, 8);
+  font-size: 20px;
+}
+
 form {
   display: flex;
   justify-content: space-between;
