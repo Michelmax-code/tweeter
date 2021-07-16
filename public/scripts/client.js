@@ -33,6 +33,8 @@ $(document).ready(function() {
       .catch((err) => {
         console.log(`Error loading articles: ${err}`);
       });
+    $("form")[0].reset();
+    $(".counter").html("140");
   });
   
   // load the tweets in the data
