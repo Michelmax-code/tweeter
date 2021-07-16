@@ -70,11 +70,11 @@ $(document).ready(function() {
   <article class="tweet">
     <header>
       <div class="username">
-        <span><img src="${tweet.user.avatars}">"${tweet.user.name}"</span>
-        <span>"${tweet.user.handle}"</span>
+        <span><img src="${tweet.user.avatars}">${tweet.user.name}</span>
+        <span>${tweet.user.handle}</span>
       </div>
       <div>
-        <p>"${escape(tweet.content.text)}"</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <footer class="tweet-footer">
         <div>
